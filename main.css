@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    transition: background 2s ease; 
+    background: url(/weatherImg.jpg);
+    background-size: cover;
+}
+
+
+
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#city-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#get-weather-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4682B4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#get-weather-btn:hover {
+    background-color: #3a6b8f;
+}
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.weather-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.weather-card:not(.hidden) {
+    opacity: 1;
+}
+
+#city-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#temperature {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4682B4;
+    margin-bottom: 10px;
+}
+
+#description,
+#humidity {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+#time {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+#error-message {
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    min-height: 20px;
+    font-weight: bold;
+}
+
+#shareBtn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4682B4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+#shareBtn:hover {
+    background-color: #3a6b8f;
+}
+
+/* Animation for input if it's empty */
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .shake {
+    animation: shake 0.4s ease;
+    border: 1px solid red;
+  }
