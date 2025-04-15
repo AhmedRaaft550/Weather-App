@@ -7,7 +7,7 @@
     // get the elements
     let myInput = document.querySelector('#city-input')
     let mainBtn = document.querySelector("#get-weather-btn")
-    let apiKey = 'fea95e316e35e297ebcdf58e6e960af4'
+    // let apiKey = 'fea95e316e35e297ebcdf58e6e960af4'
     let cityName = document.querySelector('#city-name')
     let temperature = document.querySelector('#temperature')
     let description = document.querySelector("#description")
@@ -18,6 +18,7 @@
     let time = document.querySelector('#time')
     let share = document.querySelector("#shareBtn")
     let encodedMsg = ''
+    const apiKey = 'fea95e316e35e297ebcdf58e6e960af4'; // مؤقت لحل الخطأ
 
 
        // check if the elements don't existing return null and stop the code
@@ -74,7 +75,7 @@
                 weatherCard.classList.add('hidden')
                 myInput.value = myInput.value.charAt(0).toUpperCase() + myInput.value.slice(1)
                 errorMessage.textContent = 'Loading ...'
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${myInput.value}&appid=${process.env.API_KEY}&units=metric`)
+                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${myInput.value}&appid=${apiKey}&units=metric`)
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.cod === 200) {
