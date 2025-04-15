@@ -1,7 +1,7 @@
 
 
 
-import { apiKey } from './config.js';
+// import { apiKey } from './config.js';
 (function initWeatherApp () {
    
     // get the elements
@@ -74,7 +74,7 @@ import { apiKey } from './config.js';
                 weatherCard.classList.add('hidden')
                 myInput.value = myInput.value.charAt(0).toUpperCase() + myInput.value.slice(1)
                 errorMessage.textContent = 'Loading ...'
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${myInput.value}&appid=${apiKey}&units=metric`)
+                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${myInput.value}&appid=${process.env.API_KEY}&units=metric`)
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.cod === 200) {
